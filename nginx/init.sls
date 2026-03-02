@@ -1,3 +1,7 @@
+nginx_pkg:
+  pkg.installed:
+    - name: nginx
+
 /var/www/html/index.html:
   file.managed:
     - source: salt://nginx/files/index.html
@@ -7,6 +11,8 @@
     - makedirs: True
 
 nginx:
+  pkg.install: []
+
   service.running:
     - enable: True
     - reload: True
