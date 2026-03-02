@@ -11,8 +11,6 @@ nginx_pkg:
     - makedirs: True
 
 nginx:
-  pkg.install: []
-
   service.running:
     - enable: True
     - reload: True
