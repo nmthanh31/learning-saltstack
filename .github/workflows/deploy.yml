@@ -9,17 +9,10 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: SSH Deploy to Salt Master
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.MASTER_IP }}
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            salt '*' state.apply nginx
+      - name: Apply Salt
+        run: salt '*' state.apply nginx
