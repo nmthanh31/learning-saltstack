@@ -47,5 +47,9 @@ Luồng hoạt động của kiến trúc:
 ---
 
 ### Bước 1: Cài đặt Salt-Stack trên VM1 Vm2 (Hướng dẫn [tại đây](/docs/salt-install.md))
-### Bước 2: Viết file cấu hình nginx cho Salt (Như bài [salt-single-master](/docs/salt-single-master.md))
-### Bước 3: 
+### Bước 2: Viết file cấu hình nginx cho Salt vào thư mục của Git (Như bài [salt-single-master](/docs/salt-single-master.md))
+- Viết file init.sls
+- Ném một file index.html bất kỳ để thay thế index mặc định
+### Bước 3: Thêm các secret MASTER_IP và SSH_PRIVATE_KEY vào GitHub repo
+    ![secret](/imgs/secret-git.png)
+### 
